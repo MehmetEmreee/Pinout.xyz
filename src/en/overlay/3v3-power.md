@@ -3,18 +3,14 @@
 name: 3v3 Power
 class: interface
 type: pinout
-description: Raspberry Pi 3v3 Power Pins
+description: T3 Gemstone O1 3.3 V header supply pins
 pincount: 2
 pin:
   '1':
   '17':
 -->
-# 3v3 Power
+# 3.3 V Power
 
-All Raspberry Pi models since the B+ can provide up to 500mA on the 3v3 pins, thanks to a switching regulator. In some cases it may be possible to draw more but, due to lack of documentation and testing on the actual limits, 500mA is given as a rule of thumb.
+Physical pins 1 and 17 provide the header's regulated 3.3 V supply. GPIO logic also operates at 3.3 V.
 
-The 3v3 supply pin on the early Raspberry Pi had a maximum available current of only 50mA.
-
-The 5v supply coupled with a 3v3 regulator is recommended for powering 3.3v projects.
-
-The Piversify blog has [an exploration of the 3v3 supply rail on the Raspberry Pi B+](https://raspberrypise.tumblr.com/post/144555785379/exploring-the-33v-power-rail)
+The public documentation does not currently state a safe combined accessory-current budget for these pins. Do not infer Raspberry Pi current limits; verify the T3-GEM-O1 power-tree rating before powering a substantial load.

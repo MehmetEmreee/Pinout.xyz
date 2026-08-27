@@ -32,6 +32,7 @@ def build_languages(root, languages, verbose=False):
 
     for lang in languages:
         reporter.info('\nBuilding {}...'.format(lang))
+        shutil.rmtree(os.path.join(root, 'output', lang), ignore_errors=True)
         build(Site(root, lang, alternates, reporter, source))
 
     return reporter

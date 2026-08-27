@@ -1,5 +1,5 @@
 ---
-name: Raspberry Pi GPIO Pinout
+name: T3 Gemstone O1 GPIO Pinout
 pins:
   '1':
     name: 3v3 Power
@@ -9,69 +9,58 @@ pins:
     type: "+5v"
   '3':
     name: I2C1 SDA
-    description: I2C Data
+    description: I2C1 Data
     type: GPIO/I2C
     scheme:
-      wiringpi: 8
       bcm: 2
-      bcmAlt: 0
   '4':
     name: 5v Power
     type: "+5v"
   '5':
     name: I2C1 SCL
-    description: I2C Clock
+    description: I2C1 Clock
     type: GPIO/I2C
     scheme:
-      wiringpi: 9
       bcm: 3
-      bcmAlt: 1
   '6':
     name: Ground
     type: GND
   '7':
-    name: GPCLK0
+    name: ''
     type: GPIO
     scheme:
-      wiringpi: 7
       bcm: 4
   '8':
     name: UART0 TX
-    description: UART Transmit
+    description: UART transmit or PWM-0B with pinmux overlay
     type: GPIO/UART
     scheme:
-      wiringpi: 15
       bcm: 14
   '9':
     name: Ground
     type: GND
   '10':
     name: UART0 RX
-    description: UART Receive
+    description: UART receive
     type: GPIO/UART
     scheme:
-      wiringpi: 16
       bcm: 15
   '11':
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 0
       bcm: 17
   '12':
     name: PCM CLK
-    description: PCM Clock
+    description: PCM clock or PWM-ECAP2 with pinmux overlay
     type: GPIO/PCM
     scheme:
-      wiringpi: 1
       bcm: 18
   '13':
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 2
       bcm: 27
-      bcmAlt: 21
   '14':
     name: Ground
     type: GND
@@ -79,13 +68,11 @@ pins:
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 3
       bcm: 22
   '16':
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 4
       bcm: 23
   '17':
     name: 3v3 Power
@@ -94,13 +81,11 @@ pins:
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 5
       bcm: 24
   '19':
     name: SPI0 MOSI
     type: GPIO/SPI
     scheme:
-      wiringpi: 12
       bcm: 10
   '20':
     name: Ground
@@ -109,116 +94,103 @@ pins:
     name: SPI0 MISO
     type: GPIO/SPI
     scheme:
-      wiringpi: 13
       bcm: 9
   '22':
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 6
       bcm: 25
   '23':
     name: SPI0 SCLK
     type: GPIO/SPI
     scheme:
-      wiringpi: 14
       bcm: 11
   '24':
     name: SPI0 CE0
-    description: SPI Chip Select 0
+    description: SPI chip select 0
     type: GPIO/SPI
     scheme:
-      wiringpi: 10
       bcm: 8
   '25':
     name: Ground
     type: GND
   '26':
     name: SPI0 CE1
-    description: SPI Chip Select 1
+    description: SPI chip select 1
     type: GPIO/SPI
     scheme:
-      wiringpi: 11
       bcm: 7
   '27':
-    name: EEPROM SDA
-    description: HAT EEPROM i2c Data
+    name: ID SDA
+    description: HAT identification EEPROM data
     type: GPIO/I2C
     scheme:
-      wiringpi: 30
       bcm: 0
   '28':
-    name: EEPROM SCL
-    description: HAT EEPROM i2c Clock
+    name: ID SCL
+    description: HAT identification EEPROM clock
     type: GPIO/I2C
     scheme:
-      wiringpi: 31
       bcm: 1
   '29':
-    name: ''
+    name: PWM-0A
+    description: GPIO or PWM-0A with pinmux overlay
     type: GPIO
     scheme:
-      wiringpi: 21
       bcm: 5
   '30':
     name: Ground
     type: GND
   '31':
-    name: ''
+    name: PWM-1A
+    description: GPIO or PWM-1A with pinmux overlay
     type: GPIO
     scheme:
-      wiringpi: 22
       bcm: 6
   '32':
-    name: PWM0
+    name: PWM-ECAP0
+    description: GPIO or PWM-ECAP0 with pinmux overlay
     type: GPIO
-    description: PWM0
     scheme:
-      wiringpi: 26
       bcm: 12
   '33':
-    name: PWM1
+    name: PWM-1B
+    description: GPIO or PWM-1B with pinmux overlay
     type: GPIO
-    description: PWM1
     scheme:
-      wiringpi: 23
       bcm: 13
   '34':
     name: Ground
     type: GND
   '35':
     name: PCM FS
-    description: PCM Frame Sync
+    description: PCM frame sync
     type: GPIO/PCM
     scheme:
-      wiringpi: 24
       bcm: 19
   '36':
-    name: ''
+    name: PWM-ECAP1
+    description: GPIO or PWM-ECAP1 with pinmux overlay
     type: GPIO
     scheme:
-      wiringpi: 27
       bcm: 16
   '37':
     name: ''
     type: GPIO
     scheme:
-      wiringpi: 25
       bcm: 26
   '38':
     name: PCM DIN
-    description: PCM Data-In
+    description: PCM data input
     type: GPIO/PCM
     scheme:
-      wiringpi: 28
       bcm: 20
   '39':
     name: Ground
     type: GND
   '40':
     name: PCM DOUT
-    description: PCM Data-Out
+    description: PCM data output
     type: GPIO/PCM
     scheme:
-      wiringpi: 29
       bcm: 21

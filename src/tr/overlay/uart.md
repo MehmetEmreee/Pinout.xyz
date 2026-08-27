@@ -1,16 +1,10 @@
 <!--
 ---
-description: Raspberry Pi UART pinleri
-pin:
-  '8':
-    name: TXD / Transmit
-  '10':
-    name: RXD / Receive
+page_url: uart
+description: T3 Gemstone O1 UART0 başlık pinleri
 -->
-# UART - Universal Asenkron Verici/Alcı
+# UART
 
-### WiringPi'deki 2 UART pini Pin 15 ve 16'dır
+UART0 gönderme ve alma sinyalleri fiziksel 8 ve 10 numaralı pinlerdedir. Bunlar 3,3 V lojik sinyalleridir; RS-232 gerilim seviyelerine veya 5 V UART sinyallerine doğrudan bağlanmamalıdır.
 
-UART Arduino, veya bootload edilmiş bir ATmega ile kolayca iletişim kurmanızı sağlayacak bir arayüzdür. Yalnız bu iletişimi kurarken dikkat etmeniz gereken bazı hususlar var. Raspberry Pi 3.3v iken Arduino 5v'tur. Bunları akımları eşitlemeden bağlarsanız cihazlarınızdan dumanlar tütmeye başlayabilir
-
-Örneğin Arduino bootload edilmiş ATmega 328 devresini breadboard'a kurup bir akım regülatörü ile Raspberry Pi'nin 5v yolunu 3.3 v'a dönüştürebilirsiniz. Bu sayede 3.3v logic'ine sahip bir Arduino klonunuz olacak.
+Kartta ayrıca üç pinli ayrı bir debug seri bağlantısı bulunur. 40 pin başlıktaki UART ile debug konsolunun aynı Linux aygıtı olduğunu varsaymayın; güncel T3-GEM-O1 seri port dokümantasyonuna başvurun.

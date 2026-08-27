@@ -3,14 +3,14 @@
 name: 5v Power
 class: interface
 type: pinout
-description: Raspberry Pi 5v Power Pins
+description: T3 Gemstone O1 5 V header supply pins
 pincount: 2
 pin:
   '2':
   '4':
 -->
-# 5v Power
+# 5 V Power
 
-The 5v power pins are connected directly to the Pi's power input and will capably provide the full supply current of your mains adaptor, minus that used by the Pi itself.
+Physical pins 2 and 4 provide the header's 5 V supply rail.
 
-With a decent power supply, such as the official Pi adaptor, you can expect to pull about 1.5A. This varies by Pi model and adapter used. Devices that require a high current - such as LED panels, long LED strips or motors - should use an external power supply.
+The available accessory current depends on the board power source, the T3-GEM-O1 load and the power-tree limits. High-current peripherals such as motors, large LED arrays and heaters should use a correctly rated external supply with a shared ground where required.

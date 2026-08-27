@@ -29,6 +29,7 @@ DEFAULTS = {
     'bcm_pin_rev1_pi': 'GPIO/BCM pin {} on Rev 1 ( very early ) Pi',
     'supported_on': 'Supported on {}',
     'physical_pin_n': 'Physical/Board pin {}',
+    'gpio_pin_n': 'Compatibility GPIO {}',
     'physical_pin_label': 'physical pin',
     'gpio_header': 'GPIO header',
     'pins_odd': 'Odd-numbered pins',
@@ -53,6 +54,13 @@ DEFAULTS = {
 
 
 def languages(root='.'):
+    configured = os.path.join(root, 'site.yaml')
+    if os.path.exists(configured):
+        site = yaml.safe_load(open(configured).read()) or {}
+        enabled = site.get('languages')
+        if enabled:
+            return [str(code) for code in enabled]
+
     return sorted(os.path.basename(os.path.dirname(path))
                   for path in glob.glob(os.path.join(root, 'src/??/settings.yaml')))
 
