@@ -6,11 +6,13 @@ Gemstone Pinout, T3-GEM-O1 geliştirme kartının fiziksel pinlerini, uyumluluk 
 
 ## Başlık arayüzleri
 
-Varsayılan yapılandırmada genel amaçlı 3,3 V GPIO pinleriyle birlikte I2C1, SPI0, UART0 ve PCM bulunur. Yedi GPIO, `/boot/uEnv.txt` içinde T3-GEM-O1 device-tree overlay'leri etkinleştirilerek PWM işlevine geçirilebilir.
+Belgelenen başlık yapılandırmasında 3,3 V GPIO pinleriyle birlikte I2C-MCU0, SPI-MCU0, UART-MAIN1 ve PCM-McASP0 bulunur. Etkin işlevler `/boot/uEnv.txt` üzerinden yüklenen device tree overlay'lerine bağlıdır; bağlantı yapmadan önce açılış yapılandırmasını doğrulayın. Yedi başlık konumu donanımsal PWM seçeneğine sahiptir.
 
 ## Uyumlu HAT ve eklentiler
 
 Fiziksel olarak takılabilmek, elektriksel veya yazılımsal uyumluluk anlamına gelmez. [Uyumlu kartlar kataloğunda](/tr/boards) yalnızca T3-GEM-O1 pin dizilimi, gerilim gereksinimleri, pin yönleri, device-tree yapılandırması ve Linux sürücüleri incelenen kartlar yer alır.
+
+Bir eklenti, katalogda **Doğrulandı** veya **Koşullu uyumlu** durumu gösterilmedikçe uyumlu kabul edilmez.
 
 Uyumluluk durumları:
 

@@ -8,8 +8,9 @@ pins:
     name: 5v Power
     type: "+5v"
   '3':
-    name: I2C1 SDA
-    description: I2C1 Data
+    name: I2C-MCU0 SDA
+    description: I2C-MCU0 data
+    description_tr: I2C-MCU0 veri
     type: GPIO/I2C
     scheme:
       bcm: 2
@@ -17,8 +18,9 @@ pins:
     name: 5v Power
     type: "+5v"
   '5':
-    name: I2C1 SCL
-    description: I2C1 Clock
+    name: I2C-MCU0 SCL
+    description: I2C-MCU0 clock
+    description_tr: I2C-MCU0 saat
     type: GPIO/I2C
     scheme:
       bcm: 3
@@ -31,8 +33,9 @@ pins:
     scheme:
       bcm: 4
   '8':
-    name: UART0 TX
-    description: UART transmit or PWM-0B with pinmux overlay
+    name: UART-MAIN1 TX
+    description: UART-MAIN1 transmit or PWM-0B with pinmux overlay
+    description_tr: UART-MAIN1 gönderme veya pinmux overlay'iyle PWM-0B
     type: GPIO/UART
     scheme:
       bcm: 14
@@ -40,8 +43,9 @@ pins:
     name: Ground
     type: GND
   '10':
-    name: UART0 RX
-    description: UART receive
+    name: UART-MAIN1 RX
+    description: UART-MAIN1 receive
+    description_tr: UART-MAIN1 alma
     type: GPIO/UART
     scheme:
       bcm: 15
@@ -51,8 +55,9 @@ pins:
     scheme:
       bcm: 17
   '12':
-    name: PCM CLK
-    description: PCM clock or PWM-ECAP2 with pinmux overlay
+    name: PCM-McASP0 CLK
+    description: PCM-McASP0 clock or PWM-ECAP2 with pinmux overlay
+    description_tr: PCM-McASP0 saat veya pinmux overlay'iyle PWM-ECAP2
     type: GPIO/PCM
     scheme:
       bcm: 18
@@ -83,7 +88,7 @@ pins:
     scheme:
       bcm: 24
   '19':
-    name: SPI0 MOSI
+    name: SPI-MCU0 MOSI
     type: GPIO/SPI
     scheme:
       bcm: 10
@@ -91,7 +96,7 @@ pins:
     name: Ground
     type: GND
   '21':
-    name: SPI0 MISO
+    name: SPI-MCU0 MISO
     type: GPIO/SPI
     scheme:
       bcm: 9
@@ -101,13 +106,14 @@ pins:
     scheme:
       bcm: 25
   '23':
-    name: SPI0 SCLK
+    name: SPI-MCU0 SCLK
     type: GPIO/SPI
     scheme:
       bcm: 11
   '24':
-    name: SPI0 CE0
-    description: SPI chip select 0
+    name: SPI-MCU0 CS0
+    description: SPI-MCU0 chip select 0
+    description_tr: SPI-MCU0 chip-select 0
     type: GPIO/SPI
     scheme:
       bcm: 8
@@ -115,26 +121,32 @@ pins:
     name: Ground
     type: GND
   '26':
-    name: SPI0 CE1
-    description: SPI chip select 1
+    name: SPI-MCU0 CS2
+    description: SPI-MCU0 chip select 2
+    description_tr: SPI-MCU0 chip-select 2
     type: GPIO/SPI
     scheme:
       bcm: 7
   '27':
-    name: ID SDA
-    description: HAT identification EEPROM data
+    name: I2C-WKUP0 SDA (Reserved)
+    name_tr: I2C-WKUP0 SDA (Ayrılmış)
+    description: reserved HAT identification EEPROM data
+    description_tr: HAT kimlik EEPROM verisi için ayrılmıştır
     type: GPIO/I2C
     scheme:
       bcm: 0
   '28':
-    name: ID SCL
-    description: HAT identification EEPROM clock
+    name: I2C-WKUP0 SCL (Reserved)
+    name_tr: I2C-WKUP0 SCL (Ayrılmış)
+    description: reserved HAT identification EEPROM clock
+    description_tr: HAT kimlik EEPROM saati için ayrılmıştır
     type: GPIO/I2C
     scheme:
       bcm: 1
   '29':
-    name: PWM-0A
-    description: GPIO or PWM-0A with pinmux overlay
+    name: ''
+    description: PWM-0A available with pinmux overlay
+    description_tr: pinmux overlay'iyle PWM-0A kullanılabilir
     type: GPIO
     scheme:
       bcm: 5
@@ -142,20 +154,23 @@ pins:
     name: Ground
     type: GND
   '31':
-    name: PWM-1A
-    description: GPIO or PWM-1A with pinmux overlay
+    name: ''
+    description: PWM-1A available with pinmux overlay
+    description_tr: pinmux overlay'iyle PWM-1A kullanılabilir
     type: GPIO
     scheme:
       bcm: 6
   '32':
     name: PWM-ECAP0
-    description: GPIO or PWM-ECAP0 with pinmux overlay
+    description: PWM-ECAP0 or GPIO with pinmux configuration
+    description_tr: pinmux yapılandırmasıyla PWM-ECAP0 veya GPIO
     type: GPIO
     scheme:
       bcm: 12
   '33':
     name: PWM-1B
-    description: GPIO or PWM-1B with pinmux overlay
+    description: PWM-1B or GPIO with pinmux configuration
+    description_tr: pinmux yapılandırmasıyla PWM-1B veya GPIO
     type: GPIO
     scheme:
       bcm: 13
@@ -163,14 +178,16 @@ pins:
     name: Ground
     type: GND
   '35':
-    name: PCM FS
-    description: PCM frame sync
+    name: PCM-McASP0 FS
+    description: PCM-McASP0 frame sync
+    description_tr: PCM-McASP0 çerçeve eşzamanlama
     type: GPIO/PCM
     scheme:
       bcm: 19
   '36':
-    name: PWM-ECAP1
-    description: GPIO or PWM-ECAP1 with pinmux overlay
+    name: ''
+    description: PWM-ECAP1 available with pinmux overlay
+    description_tr: pinmux overlay'iyle PWM-ECAP1 kullanılabilir
     type: GPIO
     scheme:
       bcm: 16
@@ -180,8 +197,9 @@ pins:
     scheme:
       bcm: 26
   '38':
-    name: PCM DIN
-    description: PCM data input
+    name: PCM-McASP0 DIN
+    description: PCM-McASP0 data input
+    description_tr: PCM-McASP0 veri girişi
     type: GPIO/PCM
     scheme:
       bcm: 20
@@ -189,8 +207,9 @@ pins:
     name: Ground
     type: GND
   '40':
-    name: PCM DOUT
-    description: PCM data output
+    name: PCM-McASP0 DOUT
+    description: PCM-McASP0 data output
+    description_tr: PCM-McASP0 veri çıkışı
     type: GPIO/PCM
     scheme:
       bcm: 21

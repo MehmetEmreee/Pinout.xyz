@@ -66,4 +66,10 @@ Pins 19, 21, 23 and 24 form SPI-MCU0. Pins 27 and 28 are reserved I2C-WKUP0 line
 
 > **SBUS warning:** SBUS uses an inverted serial signal. An external signal inverter is required between the receiver and pin 10; do not connect a standard SBUS output directly.
 
+> **Power and logic warning:** RCOut pins carry 3.3 V PWM logic only; they do not power a servo. Power servos and other loads from a correctly rated external supply with a shared ground, and use a driver or level shifter when required. Verify that GPS and telemetry signal levels are 3.3 V before connection.
+
+> **Buzzer warning:** Public documentation does not state a safe direct-drive current for the external buzzer output. Use a transistor or suitable driver unless the selected buzzer and board limit have been explicitly verified.
+
+> **Resource conflict:** The UART-MAIN6 overlay used for GPS disables Bluetooth. UART-WKUP0 telemetry replaces SPI-MCU0 CS2 on physical pin 26, so the ArduPilot SPI configuration exposes CS0 only.
+
 Enable every overlay listed in the official ArduPilot guide before wiring peripherals. The guide also documents Linux device paths, service setup and QGroundControl connectivity.

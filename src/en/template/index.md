@@ -6,11 +6,13 @@ Gemstone Pinout documents the physical pins, compatibility GPIO numbers and defa
 
 ## Header interfaces
 
-The default header configuration exposes I2C1, SPI0, UART0 and PCM alongside general-purpose 3.3 V GPIO. Seven GPIOs can be switched to PWM functions with T3-GEM-O1 device-tree overlays configured in `/boot/uEnv.txt`.
+The documented header configuration exposes I2C-MCU0, SPI-MCU0, UART-MAIN1 and PCM-McASP0 alongside 3.3 V GPIO. The exact active functions depend on the device-tree overlays loaded through `/boot/uEnv.txt`; verify the boot configuration before wiring. Seven header positions have hardware PWM options.
 
 ## Compatible HATs and add-ons
 
 Physical fit does not guarantee electrical or software compatibility. The [compatible boards catalogue](/boards) lists only add-ons reviewed against the T3-GEM-O1 pin assignment, voltage requirements, pin direction, device-tree configuration and Linux driver availability.
+
+No add-on is treated as compatible until its status is shown as **Verified** or **Conditionally compatible** in that catalogue.
 
 Compatibility states are:
 

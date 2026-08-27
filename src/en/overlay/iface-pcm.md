@@ -4,6 +4,7 @@ name: PCM
 class: interface
 type: pinout
 description: T3 Gemstone O1 PCM/I2S-compatible header signals
+url: https://docs.t3gemstone.org/en/boards/o1/peripherals/introduction
 pin:
   '12':
     name: CLK
@@ -18,4 +19,4 @@ pin:
 
 The default 40-pin assignment reserves physical pins 12, 35, 38 and 40 for PCM clock, frame sync, data input and data output respectively.
 
-PCM/I2S software and HAT compatibility must be checked against the T3-GEM-O1 device tree and audio drivers; matching physical pins alone does not guarantee that a Raspberry Pi audio HAT will work.
+> **Compatibility warning:** PCM/I2S software, signal direction, clocks and HAT compatibility must be checked against the selected T3-GEM-O1 device tree and audio drivers. Matching physical pins alone does not guarantee that a Raspberry Pi audio HAT will work.

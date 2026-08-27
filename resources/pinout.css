@@ -1586,6 +1586,46 @@ html[data-theme] #crumbtrail p { color: var(--gs-muted); }
 #content article p { color: var(--gs-text); }
 #content article a { color: var(--gs-brand-strong); }
 
+#content article blockquote,
+#content article .notice {
+    margin: 18px 0;
+    padding: 14px 16px;
+    color: var(--gs-text);
+    background: rgba(181, 137, 0, .12);
+    border: 1px solid rgba(181, 137, 0, .38);
+    border-left: 5px solid #b58900;
+    border-radius: 8px;
+}
+
+#content article blockquote p,
+#content article .notice p {
+    margin: 4px 0 0;
+}
+
+#content article blockquote strong,
+#content article .notice > strong {
+    color: #8a6600;
+    font-weight: 750;
+}
+
+html[data-theme="dark"] #content article blockquote strong,
+html[data-theme="dark"] #content article .notice > strong {
+    color: #f2c94c;
+}
+
+#boards .boards-empty {
+    grid-column: 1 / -1;
+    list-style: none;
+    margin: 18px;
+    padding: 22px;
+    color: var(--gs-text);
+    background: rgba(181, 137, 0, .12);
+    border: 1px solid rgba(181, 137, 0, .38);
+    border-left: 5px solid #b58900;
+    border-radius: 8px;
+    line-height: 1.65;
+}
+
 .pin-facts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));

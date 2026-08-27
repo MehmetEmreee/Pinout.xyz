@@ -3,30 +3,32 @@
 name: I2C
 class: interface
 type: pinout
-description: T3 Gemstone O1 I2C1 header pins
+description: T3 Gemstone O1 I2C-MCU0 and reserved I2C-WKUP0 header pins
 url: https://docs.t3gemstone.org/en/boards/o1/peripherals/i2c
 pin:
   '3':
-    name: I2C1 SDA
+    name: I2C-MCU0 SDA
     direction: both
     active: high
   '5':
-    name: I2C1 SCL
+    name: I2C-MCU0 SCL
     direction: both
     active: high
   '27':
-    name: ID SDA
+    name: I2C-WKUP0 SDA (Reserved)
     direction: both
     active: high
   '28':
-    name: ID SCL
+    name: I2C-WKUP0 SCL (Reserved)
     direction: both
     active: high
 -->
 # I2C - Inter-Integrated Circuit
 
-The external I2C1 bus is available on physical pin 3 (SDA) and physical pin 5 (SCL). The board documentation identifies this controller as `/dev/i2c-2` in the current software image.
+The external I2C-MCU0 bus is available on physical pin 3 (SDA) and physical pin 5 (SCL).
 
-I2C supports multiple devices on the same two signal lines, provided their addresses do not conflict. Install `i2c-tools` and use `sudo i2cdetect -y -r 2` to inspect the bus.
+The official pages show both `/dev/i2c-1` and `/dev/i2c-2` under different image or overlay configurations. Do not hard-code the bus number: run `ls /dev/i2c-*`, identify the active controller for the installed image, then inspect that bus with `i2cdetect`.
 
-Physical pins 27 and 28 are reserved for the HAT identification EEPROM interface. Do not treat them as a general-purpose I2C connector unless the hardware and boot configuration have been explicitly verified.
+> **Electrical warning:** Use only 3.3 V-compatible devices. The public documentation does not publish the header pull-up values; verify existing pull-ups and total bus loading before adding resistors. Every device sharing the bus must use a non-conflicting address.
+
+> **Reserved pins:** Physical pins 27 and 28 belong to I2C-WKUP0 and are reserved for HAT identification EEPROM. The official guide says to leave them unconnected when no HAT is present; do not treat them as general-purpose I2C or GPIO without explicit validation.

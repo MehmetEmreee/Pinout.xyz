@@ -25,6 +25,8 @@ pin:
 
 The 40-pin header exposes seven hardware PWM options: PWM-ECAP0 on GPIO 12, PWM-ECAP1 on GPIO 16, PWM-ECAP2 on GPIO 18, PWM-0A on GPIO 5, PWM-0B on GPIO 14, PWM-1A on GPIO 6 and PWM-1B on GPIO 13.
 
-Each PWM function must be selected with its T3-GEM-O1 device-tree overlay in `/boot/uEnv.txt`. PWM-0A and PWM-0B share a period, as do PWM-1A and PWM-1B; duty cycles can be configured independently within each pair.
+Availability depends on the T3-GEM-O1 device-tree overlays loaded through `/boot/uEnv.txt`; do not treat every PWM label as the current boot configuration. PWM-0A and PWM-0B share a period, as do PWM-1A and PWM-1B; duty cycles can be configured independently within each pair.
 
 The controllers are exposed through `/sys/class/pwm`. See the official PWM guide for the exact overlay names and `pwmchip` mapping.
+
+> **Load warning:** PWM header pins are 3.3 V logic signals, not motor or servo power outputs. Public documentation does not specify GPIO drive current or guaranteed PWM frequency limits. Power servos and other loads from a correctly rated external supply, use a suitable driver or level shifter, and connect grounds where required.

@@ -45,8 +45,11 @@ def overlay_pages(site):
 
 
 def index_pages(site, tiles):
+    board_tiles = ''.join(tiles)
+    if not board_tiles:
+        board_tiles = '<li class="boards-empty">{}</li>'.format(site.strings['boards_empty'])
     return {
-        'boards': {'content': ''.join(tiles), 'src': 'boards'},
+        'boards': {'content': board_tiles, 'src': 'boards'},
         'index': {'content': render.article('Index', site.markdown('template/index.md')), 'src': 'index'},
         '404': {'content': render.article('404', site.markdown('template/404.md'))},
     }

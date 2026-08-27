@@ -9,7 +9,7 @@ from .pins import Pins
 from .site import Reporter, Site
 
 SITE_DIR = 'output/site'
-SHARED_DIRS = ('resources', 'phatstack')
+SHARED_DIRS = ('resources',)
 
 
 def resolve(root, requested):

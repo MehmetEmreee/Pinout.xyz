@@ -55,6 +55,7 @@ class GeneratedSiteTest(unittest.TestCase):
         self.assertTrue((SITE / 'tr' / 'pinout' / 'pwm.html').is_file())
         self.assertTrue((SITE / 'pinout' / 'ardupilot.html').is_file())
         self.assertTrue((SITE / 'tr' / 'pinout' / 'ardupilot.html').is_file())
+        self.assertFalse((SITE / 'phatstack').exists())
 
     def test_html_metadata_and_templates(self):
         for page in self.pages:
@@ -92,6 +93,26 @@ class GeneratedSiteTest(unittest.TestCase):
                         page.relative_to(SITE), target))
 
         self.assertEqual(failures, [], '\n' + '\n'.join(failures))
+
+    def test_gemstone_safety_and_default_signal_content(self):
+        english = (SITE / 'index.html').read_text(encoding='utf-8')
+        turkish = (SITE / 'tr' / 'index.html').read_text(encoding='utf-8')
+        pin_26 = (SITE / 'pinout' / 'pin26_gpio7.html').read_text(encoding='utf-8')
+        pin_27 = (SITE / 'pinout' / 'pin27_gpio0.html').read_text(encoding='utf-8')
+        pin_29 = (SITE / 'pinout' / 'pin29_gpio5.html').read_text(encoding='utf-8')
+        boards = (SITE / 'boards' / 'index.html').read_text(encoding='utf-8')
+        ardupilot_tr = (SITE / 'tr' / 'pinout' / 'ardupilot.html').read_text(encoding='utf-8')
+
+        self.assertIn('UART-MAIN1 TX', english)
+        self.assertIn('UART-MAIN1 TX', turkish)
+        self.assertNotIn('UART0 TX', english)
+        self.assertIn('SPI-MCU0 CS2', pin_26)
+        self.assertNotIn('SPI0 CE1', pin_26)
+        self.assertIn('I2C-WKUP0', pin_27)
+        self.assertIn('notice-warning', pin_27)
+        self.assertIn('General-purpose I/O', pin_29)
+        self.assertIn('boards-empty', boards)
+        self.assertIn('Servo ve diğer yükleri', ardupilot_tr)
 
 
 if __name__ == '__main__':
