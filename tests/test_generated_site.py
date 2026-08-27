@@ -53,6 +53,8 @@ class GeneratedSiteTest(unittest.TestCase):
         self.assertTrue((SITE / 'tr' / 'index.html').is_file())
         self.assertTrue((SITE / 'pinout' / 'pwm.html').is_file())
         self.assertTrue((SITE / 'tr' / 'pinout' / 'pwm.html').is_file())
+        self.assertTrue((SITE / 'pinout' / 'ardupilot.html').is_file())
+        self.assertTrue((SITE / 'tr' / 'pinout' / 'ardupilot.html').is_file())
 
     def test_html_metadata_and_templates(self):
         for page in self.pages:

@@ -20,3 +20,4 @@ interfaces:
   - uart
   - iface-pwm
   - iface-pcm
+  - ardupilot

@@ -218,6 +218,8 @@ def interfaces_sort(overlay):
     name = overlay['name'].lower()
     if name == 'gpio':
         return '0'
+    if name == 'ardupilot':
+        return '8'
     if name == 'ground':
         return '6'
     if name == '1-wire':
